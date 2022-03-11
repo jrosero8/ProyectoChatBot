@@ -1,0 +1,22 @@
+version: "2.0"
+nlu:
+- intent: saludar
+  examples: |
+    - hola
+- intent: clasificar
+  examples: |
+    - /clasificar
+    - clasificar
+- intent: reporte
+  examples: |
+    - el motor no funciona
+    - el motor no enciende
+- intent: costopromediofallas
+  examples: |
+    - /costopromediofallas
+- intent: costopromediofallasmatricula
+  examples: |
+    - /costopromediofallasmatricula
+- intent: matricula
+  examples: |
+    - HK-2029

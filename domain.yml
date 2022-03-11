@@ -1,0 +1,42 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- saludar
+- clasificar
+- reporte
+- costopromediofallas
+- costopromediofallasmatricula
+- matricula
+responses:
+  utter_saludar:
+  - buttons:
+    - payload: /clasificar
+      title: Clasificar Reporte
+    - payload: /costopromediofallas
+      title: Costo Promedio Fallas
+    text: Hola, soy el chatbot, en qué te puedo ayudar?
+  utter_clasificar:
+  - text: Ingresa el reporte que deseas clasificar?
+  utter_clasificar_reporte:
+  - text: La clasificación del sistema es {sistema}
+  utter_ask_costo_promedio_fallas:
+  - buttons:
+    - payload: /costopromediofallasmatricula
+      title: Matrícula
+    - payload: /costopromediofallasflota
+      title: Flota
+    - payload: /costopromediofallasATA
+      title: Sistema / ATA
+    text: 'Por:'
+  utter_costo_promedio_fallas:
+  - text: El costo promedio de las fallas es {cost_prom_falla_mat}
+  utter_prom_cost_falla_mat:
+  - text: El costo promedio de las fallas es {cost_prom_falla_mat}
+  utter_ask_costo_promedio_fallas_mat:
+  - text: Indica el número de matrícula
+actions:
+- action_clasificar_reporte_api
+- utter_clasificar_reporte
+- utter_ask_costo_promedio_fallas
+- action_cost_prom_falla_api
